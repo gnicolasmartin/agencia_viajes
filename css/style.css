@@ -197,6 +197,10 @@ select option{
     object-fit: cover;
 }
 
+a{
+    text-decoration: none !important;
+}
+
 #homelogo{
     width:90px;
     position:fixed;
