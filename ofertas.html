@@ -50,7 +50,66 @@
 
         <!--Sección principal-->
         <main class="container animate__animated animate__zoomIn">
-
+          
+          <aside class="sidebar">
+            <div class="offers">
+              <h2>Ofertas de Viajes</h2>
+              <ul>
+                <li><a href="#" onclick="showForm('offer1')">Oferta Año nuevo en Paris</a></li>
+                <li><a href="#" onclick="showForm('offer2')">Ski week en Las Leñas</a></li>
+                <li><a href="#" onclick="showForm('offer3')">Finde Patrio en el NOA</a></li>
+                <li><a href="#" onclick="showForm('offer3')">Conoce el Caribe</a></li>
+              </ul>
+            </div>
+            <div class="form-container">
+              <h3>Formulario de Interés</h3>
+              <form id="interest-form">
+                <div id="offer1" class="form-group hidden">
+                  <h5>Oferta Año nuevo en Paris</h5>
+                  <label for="name">Nombre:</label>
+                  <input type="text" id="name" name="name" required>
+                  <label for="name">Apellido:</label>
+                  <input type="text" id="Lname" name="Lname" required>
+                  <label for="name">Email:</label>
+                  <input type="text" id="mail" name="mail" required>
+                  <!-- Otros campos específicos para la oferta 1 -->
+                </div>
+                <div id="offer2" class="form-group hidden">
+                  <h5>Ski week en Las Leñas</h5>
+                  <label for="name">Nombre:</label>
+                  <input type="text" id="name" name="name" required>
+                  <label for="name">Apellido:</label>
+                  <input type="text" id="Lname" name="Lname" required>
+                  <label for="name">Email:</label>
+                  <input type="text" id="mail" name="mail" required>
+                  <!-- Otros campos específicos para la oferta 2 -->
+                </div>
+                <div id="offer3" class="form-group hidden">
+                  <h5>Finde Patrio en el NOA</h5>
+                  <label for="name">Nombre:</label>
+                  <input type="text" id="name" name="name" required>
+                  <label for="name">Apellido:</label>
+                  <input type="text" id="Lname" name="Lname" required>
+                  <label for="name">Email:</label>
+                  <input type="text" id="mail" name="mail" required>
+                  <!-- Otros campos específicos para la oferta 3 -->
+                </div>
+                <div id="offer4" class="form-group hidden">
+                  <h5>Conoce el Caribe</h5>
+                  <label for="name">Nombre:</label>
+                  <input type="text" id="name" name="name" required>
+                  <label for="name">Apellido:</label>
+                  <input type="text" id="Lname" name="Lname" required>
+                  <label for="name">Email:</label>
+                  <input type="text" id="mail" name="mail" required>
+                  <!-- Otros campos específicos para la oferta 4 -->
+                </div>
+                <button type="submit">Enviar</button>
+              </form>
+            </div>
+          </aside>
+          
+                   
         </main>
 
         <div >
