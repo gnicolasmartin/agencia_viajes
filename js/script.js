@@ -8,7 +8,6 @@ var cuadroTextoFechaInicio = document.getElementsByName('fecha_inicio')[0];
 var cuadroTextoFechaFin = document.getElementsByName('fecha_fin')[0];
 
 var entradaOfertas = document.getElementById('container_ofertas');
-var entradaPaquetes = document.getElementById('container_paquetes');
 
 var ofertas = [
     {
@@ -38,24 +37,6 @@ var ofertas = [
         "fecha_inicio": "20/08/23",
         "fecha_fin": "24/08/23",
         "imagen": "img/cayo_caulker.jpg"
-    }
-];
-
-var paquetes = [
-    {
-        "nombre": "Bariloche Clásico",
-        "precio": "500usd",
-        "imagen": "img/bariloche.jpg"
-    },
-    {
-        "nombre": "Río de Janeiro y Buzios",
-        "precio": "600usd",
-        "imagen": "img/rio.jpg"
-    },
-    {
-        "nombre": "Tucumán, Salta y Jujuy",
-        "precio": "300usd",
-        "imagen": "img/tucsaltajujuy.jpg"
     }
 ];
 
@@ -145,38 +126,20 @@ for(let i=0;i<ofertas.length;i++){
             </div>
         </div></a>
     </div>
+     
             `
 
 }
+
+function showForm(offerId) {
+    var forms = document.getElementsByClassName('form-group');
+    for (var i = 0; i < forms.length; i++) {
+      forms[i].classList.add('hidden');
+    }
+    document.getElementById(offerId).classList.remove('hidden');
+  }
 
 contenido_ofertas += `</div>`;
 
 entradaOfertas.innerHTML = contenido_ofertas;
 
-var contenido_paquetes = "";
-
-contenido_paquetes += `
-<div class="row row-cols-1 row-cols-md-3 g-4">
-`;
-
-for(let i=0;i<paquetes.length;i++){
-
-    contenido_paquetes += `
-    <div class="col">
-        <a href="paquetes.html"><div class="card style="width: 18rem;">
-            <div class="card_img_container">
-                <img class="card-img-top" src="${paquetes[i].imagen}"></img>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">${paquetes[i].nombre}</h5>
-                <p class="card-text">${paquetes[i].precio}</p>
-            </div>
-        </div></a>
-    </div>
-            `
-
-}
-
-contenido_paquetes += `</div>`;
-
-entradaPaquetes.innerHTML = contenido_paquetes;
