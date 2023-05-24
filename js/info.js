@@ -219,7 +219,7 @@ xhttp.onreadystatechange = function() {
 };
 
 // Endpoint de la API y método que se va a usar para llamar
-xhttp.open("GET", "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m", true);
+xhttp.open("GET", "https://api.open-meteo.com/v1/forecast?latitude=-58.3817397&longitude=-34.6037938&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m", true);
 xhttp.setRequestHeader("Content-type", "application/json");
 // Si quisieramos mandar parámetros a nuestra API, podríamos hacerlo desde el método send()
 xhttp.send(null);
