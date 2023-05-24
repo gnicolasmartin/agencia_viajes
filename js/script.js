@@ -10,6 +10,7 @@ var cuadroTextoFechaFin = document.getElementsByName('fecha_fin')[0];
 var entradaOfertas = document.getElementById('container_ofertas');
 var entradaPaquetes = document.getElementById('container_paquetes');
 var entradaDestinos = document.getElementById('destino');
+var entradaTemperatura = document.getElementById('temperatura');
 
 var verificarAtributos = function(e){
     cambiarColorCuadrosForm();
@@ -139,3 +140,22 @@ for(let i=0;i<vec_destinos.length;i++){
 }
 
 entradaDestinos.innerHTML = contenido_destinos;
+
+var xhttp = new XMLHttpRequest();
+
+var clima_b;
+// Esta es la función que se ejecutará al finalizar la llamada
+xhttp.onreadystatechange = function() {
+  // Si nada da error
+  if (this.readyState == 4 && this.status == 200) {
+    // La respuesta, aunque sea JSON, viene en formato texto, por lo que tendremos que hace run parse
+    clima_b=JSON.parse(this.responseText)
+    console.log(clima_b)
+    entradaTemperatura.innerHTML = clima_b.hourly.temperature_2m[clima_b.hourly.temperature_2m.length-1] + "°C";
+  }
+};
+
+// Endpoint de la API y método que se va a usar para llamar
+xhttp.open("GET", "https://api.open-meteo.com/v1/forecast?latitude=-34.60&longitude=-58.54&hourly=temperature_2m", true);
+// Si quisieramos mandar parámetros a nuestra API, podríamos hacerlo desde el método send()
+xhttp.send(null);

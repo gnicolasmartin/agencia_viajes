@@ -209,6 +209,27 @@ a{
     z-index:10;
 }
 
+#clima{
+    width: 90px;
+    display: block;
+    position:fixed;
+    top: 110px;
+    right: 0px;
+    z-index:10;
+    align-content: center;
+}
+
+#clima > img{
+    object-fit:fill;
+    width: 90px;
+}
+
+#clima > p{
+    color:#006175;
+    text-align: center;
+    margin:0px;
+}
+
 .container-cuerpo{
     position: relative;
     margin: 20px;
