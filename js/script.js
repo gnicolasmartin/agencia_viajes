@@ -1,5 +1,5 @@
 var erroresFormulario = "";
-var formularioError = false;
+var formularioError=false;
 
 var cuadroTextoNombre = document.getElementsByName('nombre')[0];
 var cuadroTextoMail = document.getElementsByName('mail')[0];
@@ -9,57 +9,7 @@ var cuadroTextoFechaFin = document.getElementsByName('fecha_fin')[0];
 
 var entradaOfertas = document.getElementById('container_ofertas');
 var entradaPaquetes = document.getElementById('container_paquetes');
-
-var ofertas = [
-    {
-        "nombre": "Año Nuevo en Paris",
-        "precio": "5.000usd",
-        "fecha_inicio": "26/12/23",
-        "fecha_fin": "2/01/24",
-        "imagen": "img/paris_anio_nuevo.jpg"
-    },
-    {
-        "nombre": "Ski Week en Las Leñas",
-        "precio": "1.000usd",
-        "fecha_inicio": "06/08/23",
-        "fecha_fin": "13/08/23",
-        "imagen": "img/las_lenias.jpg"
-    },
-    {
-        "nombre": "Finde Patrio en el NOA",
-        "precio": "300usd",
-        "fecha_inicio": "25/05/23",
-        "fecha_fin": "28/05/23",
-        "imagen": "img/noa.jpg"
-    },
-    {
-        "nombre": "Conocé el Caribe",
-        "precio": "3.000usd",
-        "fecha_inicio": "20/08/23",
-        "fecha_fin": "24/08/23",
-        "imagen": "img/cayo_caulker.jpg"
-    }
-];
-
-var paquetes = [
-    {
-        "nombre": "Bariloche Clásico",
-        "precio": "500usd",
-        "imagen": "img/bariloche.jpg"
-    },
-    {
-        "nombre": "Río de Janeiro y Buzios",
-        "precio": "600usd",
-        "imagen": "img/rio.jpg"
-    },
-    {
-        "nombre": "Tucumán, Salta y Jujuy",
-        "precio": "300usd",
-        "imagen": "img/tucsaltajujuy.jpg"
-    }
-];
-
-
+var entradaDestinos = document.getElementById('destino');
 
 var verificarAtributos = function(e){
     cambiarColorCuadrosForm();
@@ -67,11 +17,10 @@ var verificarAtributos = function(e){
     validarCompletitudMail(e);
     validarCompletitudTelefono(e);
     validarCompletitudFechas(e);
-    if(formularioError==true)
-    {
-        alert(erroresFormulario);
-        erroresFormulario = "";
-    }
+    if(erroresFormulario=="")
+        erroresFormulario="Se envío el formulario adecuadamente."
+    alert(erroresFormulario);
+    erroresFormulario = "";
 };
 
 var validarCompletitudNombre = function(e){
@@ -80,6 +29,7 @@ var validarCompletitudNombre = function(e){
         e.preventDefault();
         erroresFormulario = erroresFormulario + "El nombre no puede estar vacío\n";
         formularioError = true;
+        console.log(formularioError);
         cuadroTextoNombre.style.borderColor='red';
     }
 };
@@ -135,7 +85,7 @@ for(let i=0;i<ofertas.length;i++){
 
     contenido_ofertas += `
     <div class="col">
-        <a href="ofertas.html"><div class="card style="width: 18rem;">
+        <a href="ofertas.html"><div class="card" style="width: 15rem;">
             <div class="card_img_container">
                 <img class="card-img-top" src="${ofertas[i].imagen}"></img>
             </div>
@@ -156,14 +106,14 @@ entradaOfertas.innerHTML = contenido_ofertas;
 var contenido_paquetes = "";
 
 contenido_paquetes += `
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="row row-cols-1 row-cols-lg-3 g-4">
 `;
 
 for(let i=0;i<paquetes.length;i++){
 
     contenido_paquetes += `
     <div class="col">
-        <a href="paquetes.html"><div class="card style="width: 18rem;">
+        <a href="paquetes.html"><div class="card" style="width: 15rem;">
             <div class="card_img_container">
                 <img class="card-img-top" src="${paquetes[i].imagen}"></img>
             </div>
@@ -180,3 +130,12 @@ for(let i=0;i<paquetes.length;i++){
 contenido_paquetes += `</div>`;
 
 entradaPaquetes.innerHTML = contenido_paquetes;
+
+var contenido_destinos = "";
+for(let i=0;i<vec_destinos.length;i++){
+    contenido_destinos += `
+    <option value="${vec_destinos[i].valor}">${vec_destinos[i].destino}</option>
+            `
+}
+
+entradaDestinos.innerHTML = contenido_destinos;

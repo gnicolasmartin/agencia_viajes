@@ -209,6 +209,38 @@ a{
     z-index:10;
 }
 
+.container-cuerpo{
+    position: relative;
+    margin: 20px;
+}
+
+aside {
+    border-style: solid;
+    padding-top: 20px;
+    border-color: #495057;
+    border-width: thin;
+}
+
+aside select, input{
+    font-size: 0.8rem;
+}
+
+#texto-paquete, #texto-oferta{
+    color:#000000;
+    font-family:'Ubuntu';
+}
+
+#valor-oferta, #valor-paquete{
+    margin-top: 20px;
+    color:#006175;
+    font-family:'Ubuntu';
+    font-style: italic;
+}
+
+#img-oferta, #img-paquete{
+    max-width: 100%;
+}
+
 @media only screen and (max-width: 1000px) {
     .control_form{
         font-size: 0.8rem;

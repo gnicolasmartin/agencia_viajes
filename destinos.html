@@ -47,85 +47,71 @@
                 </div>
             </nav>
         </header>
-
-        <div class="container-fluid container-cuerpo">
-          <div class="row">
-            <aside class="col-md-4 container animate__animated animate__zoomIn">
-              <form class="container" name="formulario_of">
-                <div class="row">
-                  <label class = "col-md-6" for="destino_of">Destino</label>
-                  <select class = "col-md-6 control_form" id="destino_of" name="destino_of" size="1" onchange="modificarOfertas()">
-
-                  </select>
-                </div>
-                <br>
-                <div class="row">
-                  <label class = "col-md-6" for="oferta_of">Oferta</label>
-                  <select class = "col-md-6 control_form" id="oferta_of" name="oferta_of" size="1" onchange="mostrarContenido()">
-
-                  </select>
-                </div>
-                <br>
-                <div class="grupo_form col-md-12">
-                  <div class="container contenedor_enviar">
-                    <div class="row">
-                      <label class = "col-md-12">¡Reservá tu lugar!</label>
-                    </div>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <label class = "col-md-6" for="nombre_of">Nombre y apellido</label>
-                  <input class = "col-md-6 control_form" type="text" name="nombre_of">
-                </div>
-                <br>
-                <div class="row">
-                  <label class = "col-md-6" for="mail_of">E-mail</label>
-                  <input class = "col-md-6 control_form" type="text" name="mail_of">
-                </div>
-                <br>
-                <div class="row">
-                  <label class = "col-md-6" for="telefono_of">Teléfono</label>
-                  <input class = "col-md-6 control_form" type="text" name="telefono_of">
-                </div>
-                <div class="grupo_form col-md-12">
-                  <div class="container  contenedor_enviar">
-                    <div class="row">
-                      <input class = "boton_enviar col-12" type="submit" value="Enviar">
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </aside>
-            <main class="col-md-8 animate__animated animate__zoomIn">
-              <div class="container-fluid">
-                <div class="row">
-                  <h1 id="titulo-oferta" class="col-12">
-                    Seleccione una oferta
-                  </h1>
-                </div>
-                <div class="row">
-                  <div class="col-lg-6 img-container">
-                    <img id="img-oferta">
-                  </div>
-                  <div class="col-lg-6">
-                    <p id="texto-oferta">
-                      
-                    </p>
-                  </div>
-
-                </div>
-                <div class="row">
-                  <p class="col-12" id="valor-oferta">
-
-                  </p>
-                </div>
+        
+        <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="modalFormLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalFormLabel">¡Reservá tu lugar!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-            </main>
+              <div class="modal-body">
+                <form class="container" name="formulario_des" id="formulario_des">
+                  <div class="row">
+                    <label class = "col-md-6" for="destino_des">Destino</label>
+                    <input class = "col-md-6 control_form" id="destino_des" name="destino_des" readonly>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <label class = "col-md-6" for="fecha_inicio_des">Fecha de inicio</label>
+                    <input class = "col-md-6 control_form" type="date" name="fecha_inicio_des">
+                  </div>
+                  <br>
+                  <div class="row">
+                    <label class = "col-md-6" for="fecha_fin_des">Fecha de fin</label>
+                    <input class = "col-md-6 control_form" type="date" name="fecha_fin_des">
+                  </div>
+                  <br>
+                  <div class="row">
+                    <label class = "col-md-6" for="nombre_des">Nombre y apellido</label>
+                    <input class = "col-md-6 control_form" type="text" name="nombre_des">
+                  </div>
+                  <br>
+                  <div class="row">
+                    <label class = "col-md-6" for="mail_des">E-mail</label>
+                    <input class = "col-md-6 control_form" type="text" name="mail_des">
+                  </div>
+                  <br>
+                  <div class="row">
+                    <label class = "col-md-6" for="telefono_des">Teléfono</label>
+                    <input class = "col-md-6 control_form" type="text" name="telefono_des">
+                  </div>
+                  <br>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
-        <!--Sección principal-->
+        
 
+        <main class="container animate__animated animate__zoomIn container-cuerpo">
+          <div>
+            <h1>
+              Nuestros destinos
+            </h1>
+
+            <div class="container" id="container_destinos">
+
+            </div>
+
+          </div>
+
+        </main>
+ 
 
         <div >
           <a href="index.html#top"><img id="homelogo" class="animate__animated animate__bounce" src="img/home_logo.png"></a>
@@ -178,6 +164,6 @@
 
     </html>
     <script type="text/javascript" src="js/info.js"></script>
-    <script type="text/javascript" src="js/ofertas.js"></script>
+    <script type="text/javascript" src="js/destinos.js"></script>
 </body>
 </html>
